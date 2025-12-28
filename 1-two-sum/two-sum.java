@@ -7,6 +7,6 @@ class Solution {
                 }
             }
         }
-        return new int[] {-1, -1}; // if no solution exists
-    }
+        return new int[] {-1, -1}; 
+   }
 }
