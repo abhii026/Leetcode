@@ -4,9 +4,8 @@ class Solution {
         int[] arr=new int[size];
         int in=0;
         for(int i=0; i<n; i++){
-           arr[in++]=nums[i];
-           arr[in++]=nums[n+i];
-
+            arr[in++]=nums[i];
+            arr[in++]=nums[n+i];
         }
         return arr;
     }
