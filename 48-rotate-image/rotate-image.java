@@ -2,18 +2,17 @@ class Solution {
     public void rotate(int[][] matrix) {
         int row=matrix.length;
         int col=matrix[0].length;
-        int[][] arr=new int[col][row];
         for(int i=0; i<row; i++){
-            for(int j=0; j<col; j++){
-                arr[j][i]=matrix[i][j];
+            for(int j=i+1; j<col; j++){
+               int temp=matrix[i][j];
+               matrix[i][j]=matrix[j][i];
+               matrix[j][i]=temp;
             }
         }
-        for(int i=0; i<arr.length; i++){
-            for(int j=0; j<arr[0].length; j++){
-                matrix[i][j]=arr[i][j];
-            }
-        }
+        reverse(matrix);
 
+    }
+    void reverse(int[][] matrix){
         for(int i =0; i<matrix.length; i++){
             int left=0;
             int right=matrix[i].length-1;
@@ -25,6 +24,5 @@ class Solution {
                 right--;
             }
         }
-        // return arr;
     }
 }
