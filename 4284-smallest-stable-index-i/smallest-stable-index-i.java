@@ -1,18 +1,16 @@
 class Solution {
     public int firstStableIndex(int[] nums, int k) {
-        int n = nums.length;
-        for(int i=0; i<n; i++){
+        for(int i=0; i<nums.length; i++){
             int maxL=nums[0];
             int minR=nums[i];
-            for(int j=0; j<i; j++){
-                maxL=Math.max(maxL,nums[j]);
+            for(int j=0; j<=i; j++){
+                maxL=Math.max(maxL, nums[j]);
             }
-            for(int j=i; j<n; j++){
-                minR=Math.min(minR,nums[j]);
+            for(int j=i; j<nums.length; j++){
+                minR=Math.min(minR, nums[j]);
             }
-            int score = maxL - minR;
-
-            if (score <= k) {
+            int instable=maxL-minR;
+            if(instable<=k){
                 return i;
             }
         }
